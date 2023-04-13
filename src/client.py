@@ -15,20 +15,11 @@ class DiscordClient:
 
     def __init__(self) -> None:
         self.databases: dict[str, Database] = {}
-        self.tokens: list[str] = [];
-    
+
     @classmethod
-    async def load_tokens(cls, * tokens: list[str]) -> Self:
+    async def login(cls, *, token: str) -> Self:
         self = cls()
-        self.tokens += tokens
-    
-    @classmethod
-    async def login(cls, *, token: list[str] = None) -> Self:
-        self = cls()
-        if token != None:
-            self.tokens += token
-        
-        #login
+        # TODO: Login as discord bot (?) and pass credentials
         return self
 
     async def load_database(self, name: str) -> Database | None:
