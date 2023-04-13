@@ -14,6 +14,7 @@ class DiscordClient:
     api in order to create/load databases and make http requests."""
 
     def __init__(self) -> None:
+        self.latency: int = 0
         self.databases: dict[str, Database] = {}
 
     @classmethod
