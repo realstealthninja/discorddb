@@ -15,7 +15,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 keywords = ["discord", "database"]
-dependencies = []
+dependencies = ["aiohttp"]
 
 [project.optional-dependencies]
 dev = ["black", "ruff"]
