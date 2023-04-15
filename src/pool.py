@@ -1,18 +1,15 @@
-from typing import  TYPE_CHECKING
+from .client import DiscordClient
 
-if TYPE_CHECKING:
-    from .client import DiscordClient
 
-class pool:
-    
+class Pool:
     def __init__(self, tokens: list[str]) -> None:
         self.tokens: list[str] = tokens
-        self.cursors: list["DiscordClient"] = [DiscordClient.login(token) for token in tokens]
-    
+        self.cursors: list[DiscordClient] = [
+            DiscordClient.login(token) for token in tokens
+        ]
+
     @classmethod
     async def sort(cls):
-        #TODO: implement more sorting methods
+        # TODO: implement more sorting methods
         self = cls()
-        self.cursors.sort(lambda x: x.latency)
-    
-    
+        self.cursors.sort(key=lambda x: x.latency)
