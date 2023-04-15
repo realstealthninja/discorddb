@@ -8,7 +8,6 @@ class Pool:
             DiscordClient.login(token) for token in tokens
         ]
 
-    @classmethod
     async def sort(cls):
         # TODO: implement more sorting methods
         self = cls()
