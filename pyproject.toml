@@ -1,4 +1,21 @@
-# TODO
-# ruff
-# black
-# dependencies
+[build-system]
+requires = ["setup-tools"]
+
+
+[project]
+name = "discord-db"
+version = "0.1.0"
+description = "A database based on discord"
+readme = "README.md"
+authors = [{ name = "Caeden PH"}]
+license = {file = "License"}
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["discord", "database"]
+dependencies = ["aiohttp"]
+
+[project.optional-dependencies]
+dev = ["black", "ruff"]
